@@ -1,4 +1,4 @@
-https://github.com/chavakalpana/srinivas1987devops.git'pipeline{
+pipeline{
     agent any
 
     environment{
