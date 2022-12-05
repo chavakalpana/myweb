@@ -8,7 +8,7 @@ pipeline{
 					stage('Build') 
 					{
 					steps{
-					def -f cd/var/lib/jenkins/workspace/pipeline \n /opt/maven/bin/mvn clean
+					def -f /var/lib/jenkins/workspace/pipeline \n /opt/maven/bin/mvn clean
 					sh "mvn clean"
 					}
 					}
