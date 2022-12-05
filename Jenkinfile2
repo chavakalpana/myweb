@@ -3,12 +3,12 @@ pipeline{
 			environment{
 			    PATH="/opt/maven/bin:$PATH"
                         }
+			 def -f /opt/maven/bin/myweb/pom.xml clean
 			 stages 
 			{
 					stage('Build') 
 					{
 					steps{
-					def -f /opt/maven/bin/myweb/pom.xml clean
 					sh "mvn clean"
 					}
 					}
