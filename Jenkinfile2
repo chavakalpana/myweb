@@ -3,7 +3,7 @@ pipeline{
 			environment{
 			    PATH="/opt/maven/bin:$PATH"
                         }
-			 def -f /opt/maven/bin/myweb/pom.xml clean
+			mvn -f /var/lib/jenkins/workspace/pipeline /opt/maven/bin/myweb/pom.xml 
 			 stages 
 			{
 					stage('Build') 
