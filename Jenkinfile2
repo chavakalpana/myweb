@@ -3,7 +3,6 @@ pipeline{
 			environment{
 			    PATH="/opt/maven/bin:$PATH"
                         }
-			def -f pomfilepath= /opt/maven/bin/myweb/pom.xml
 			stages 
 			{
 					stage('Build') 
