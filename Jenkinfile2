@@ -15,13 +15,22 @@ pipeline{
 					stage('Test') 
 					{
 					steps{
+					sh "cd /var/lib/jenkins/workspace/pipeline \n /opt/maven/bin/mvn clean"
 					sh "mvn test"
 					}
 					}
 					stage('Compile') 
 					{
 					steps{
+					sh "cd /var/lib/jenkins/workspace/pipeline \n /opt/maven/bin/mvn clean"
 					sh "mvn compile"
+					}
+					}
+					stage('package') 
+					{
+					steps{
+					sh "cd /var/lib/jenkins/workspace/pipeline \n /opt/maven/bin/mvn clean"
+					sh "mvn package"
 					}
 					}
 				}
