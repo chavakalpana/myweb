@@ -1,8 +1,5 @@
 pipeline{
     agent any
-    tools{
-     jdk "java11"
-    }
     environment{
         PATH = "/opt/maven/bin:$PATH"
     }
@@ -14,7 +11,7 @@ pipeline{
         }
         stage("Maven Build"){
         steps{
-                sh "mvn clean compile"
+                sh "mvn clean package"
                 sh "mv target/*.war target/myweb.war"
             }
         }
