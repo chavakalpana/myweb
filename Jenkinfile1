@@ -1,6 +1,8 @@
 pipeline{
     agent any
-    
+    tools{
+     jdk "jdk11"
+    }
     environment{
         PATH = "/opt/maven/bin:$PATH"
     }
