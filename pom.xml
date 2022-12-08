@@ -16,9 +16,9 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
-    <sonar.host.url>http://3.110.225.156:9000/</sonar.host.url>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <sonar.host.url>http://43.205.237.250:9000/</sonar.host.url>
    </properties>
 
   <dependencies>
@@ -47,8 +47,8 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
           <configuration>
-            <source>11</source>
-            <target>11</target>
+            <source>1.8</source>
+            <target>1.8</target>
             <scope>provided</scope>
            </configuration>
         </plugin>
@@ -71,4 +71,24 @@
       </plugins>
     </pluginManagement>
   </build>
+  <pluginRepositories>
+	    <pluginRepository>    
+		<id>maven1</id>
+		<name>Maven.org</name>
+		<url>http://repo1.maven.org/maven2</url>
+	    </pluginRepository>
+	</pluginRepositories>
+	       	
+	
+         <distributionManagement>
+		 <snapshotRepository>
+		    <id>nexusRepo</id>
+		    <url>http://13.127.109.43:8081/repository/sample-snapshots/</url>
+		 </snapshotRepository>
+		
+		<repository>
+		    <id>nexusRepo</id>
+		    <url>http://13.127.109.43:8081/repository/sample-releases/</url>
+		</repository>
+  	</distributionManagement>
 </project>
