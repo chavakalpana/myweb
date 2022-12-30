@@ -11,8 +11,8 @@ pipeline{
         }
         stage("Maven Build"){
         steps{
-                sh "mvn clean package"
-                sh "mv target/*.war target/myweb.war"
+               sh "cd /var/lib/jenkins/workspace/pipelin2 \n /opt/maven/bin/mvn clean"
+					sh "mvn package"
             }
         }
         stage("deploy-dev"){
