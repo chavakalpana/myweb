@@ -9,12 +9,38 @@ pipeline{
                 git credentialsId: 'gitjenkins', url: 'https://github.com/chavakalpana/myweb.git'
             }
         }
-        stage("Maven Build"){
-        steps{
-               sh "cd /var/lib/jenkins/workspace/pipeline2 \n /opt/maven/bin/mvn clean"
+        
+			  stages 
+			{
+					stage('Build') 
+					{
+					steps{
+					sh "cd /var/lib/jenkins/workspace/sampleproject \n /opt/maven/bin/mvn clean"
+					sh "mvn clean"
+					}
+					}
+					stage('Test') 
+					{
+					steps{
+					sh "cd /var/lib/jenkins/workspace/sampleproject \n /opt/maven/bin/mvn clean"
+					sh "mvn test"
+					}
+					}
+					stage('Compile') 
+					{
+					steps{
+					sh "cd /var/lib/jenkins/workspace/sampleproject \n /opt/maven/bin/mvn clean"
+					sh "mvn compile"
+					}
+					}
+					stage('package') 
+					{
+					steps{
+					sh "cd /var/lib/jenkins/workspace/sampleproject \n /opt/maven/bin/mvn clean"
 					sh "mvn package"
-            }
-        }
+					}
+                                        }
+                                        
         stage("deploy-dev"){
             steps{
                 sshagent(['tomcat-new']) {
